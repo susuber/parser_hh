@@ -1,0 +1,4 @@
+vacancy: Разработчик python
+place: Москва
+per_page: !!int 100
+url: https://api.hh.ru/vacancies
