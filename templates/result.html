@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+{{ super() }}
+<H1>Результат анализа вакансии {{ session.vacancy }} в {{ session.place }}</H1>
+<p>Средняя зарабтная плота: {{ result["salary"] }} руб.</p>
+<p>Процент вакансий с заработной платой: {{ result["num_salary"] / result["number"] * 100 }}%</p>
+<p></p>
+<table>
+    <caption><span class="colortext_red">Частота требований к навыкам</span></caption>
+    <tr>
+        <th>Навык</th>
+        <th>Абсолютное значение</th>
+        <th>Относительно всех навыков</th>
+        <th>Относительно уникальных</th>
+    </tr>
+    {% for skill in result['skills'].items() %}
+    <tr>
+        <td>{{ skill[0] }}</td>
+        <td>{{ skill[1] }}</td>
+        <td>{{ (skill[1] / sum_skills) * 100 }}</td>
+        <td>{{ (skill[1] / all_skills) * 100 }}</td>
+    </tr>
+    {% endfor -%}
+</table>
+{% endblock %}

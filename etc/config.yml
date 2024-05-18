@@ -1,4 +1,6 @@
 vacancy: Разработчик python
 place: Москва
-per_page: !!int 100
+per_page: !!int 10
 url: https://api.hh.ru/vacancies
+random_vacancy: 'etc/vacancy'
+random_place: 'etc/places'

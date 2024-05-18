@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+{{ super() }}
+<form action="/search" method="post" class="form-search">
+    <p><label>Вакансия: </label> <input type="text" name="vacancy" value={{ config['vacancy'] }} required /></p>
+    <p><label>Место поиска: </label> <input type="text" name="place" value={{ config['place'] }} required /></p>
+    <p><label>Колличество страниц: </label> <input type="text" name="pages" value="1" required /></p>
+    {% for cat, msg in get_flashed_messages(True) %}
+    <div class="flash {{ cat }}">{{ msg }}</div>
+    {% endfor %}
+    <p><input type="submit" value="Отправить"></p>
+{% endblock %}

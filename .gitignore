@@ -1,2 +1,4 @@
 /.venv
-/result.json
+app/__pycache__
+.gitignore
+__pycache__
